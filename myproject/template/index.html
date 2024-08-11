@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>index</title>
+</head>
+<body>
+    
+    <div id="navbar">Adi blog</div>
+    {% for data in posts reversed %}
+   <a   href="post/{{data.id}}"> <div id="box1">
+        <div class="title">{{data.title}}</div>
+        <div class="date">{{data.date}}</div>
+        <div class="body">
+            {{data.body |truncatewords:20}}
+        </div>
+
+    </div>
+</a>
+     {% endfor %}   
+
+
+
+</body>
+</html>
